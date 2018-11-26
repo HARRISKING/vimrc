@@ -74,6 +74,18 @@ Plug 'scrooloose/nerdtree'
 "
 " 安装全局搜索
 Plug 'dyng/ctrlsf.vim'
+" 安装兼容javascript的tagbar
+Plug 'hushicai/tagbar-javascript.vim'
+" 安装ESlint
+"简单的 vim sftp 上传插件
+Plug 'elrrrrrrr/qin-sync'
+
+"注释功能
+Plug 'ddollar/nerdcommenter'
+" 折叠
+Plug 'luchermitte/vimfold4c'
+Plug 'eslint/eslint'
+Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
@@ -82,7 +94,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'Valloric/YouCompleteMe'
 " Plug 'vim-syntastic/syntastic'
 Plug 'edkolev/tmuxline.vim'
-Plug 'majutsushi/tagbar'
 Plug 'ternjs/tern_for_vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mattn/emmet-vim'
@@ -96,13 +107,12 @@ Plug 'Yggdroot/indentLine'
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
-
+Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 " 全局搜索设置快捷键
 nnoremap <C-f> :CtrlSF<Space>
 " let g:ctrlsf_ignore_dir = 'dist'
-
 
 " NERDTree
 let NERDChristmasTree=0
@@ -142,6 +152,7 @@ let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
 let Tlist_Use_Right_Window=1
 
+let g:user_emmet_leader_key='<C-Z>'
 " Syntastics
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
