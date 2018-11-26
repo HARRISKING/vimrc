@@ -39,9 +39,9 @@ set wildmenu                    " vim 自身命令行模式智能补全
 let mapleader="\<Space>"
 
 " 代码折叠
-set nofoldenable
+" set nofoldenable
 "set foldmethod=indent
-set foldmethod=syntax
+" set foldmethod=syntax
 
 " 主题设置
 syntax enable
@@ -76,7 +76,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'dyng/ctrlsf.vim'
 " 安装兼容javascript的tagbar
 Plug 'hushicai/tagbar-javascript.vim'
-" 安装ESlint
 "简单的 vim sftp 上传插件
 Plug 'elrrrrrrr/qin-sync'
 
@@ -84,6 +83,8 @@ Plug 'elrrrrrrr/qin-sync'
 Plug 'ddollar/nerdcommenter'
 " 折叠
 Plug 'luchermitte/vimfold4c'
+Plug 'ctrlpvim/ctrlp.vim'
+" 安装ESlint
 Plug 'eslint/eslint'
 Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
@@ -94,7 +95,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'Valloric/YouCompleteMe'
 " Plug 'vim-syntastic/syntastic'
 Plug 'edkolev/tmuxline.vim'
-Plug 'ternjs/tern_for_vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mattn/emmet-vim'
 Plug 'Chiel92/vim-autoformat'
@@ -108,7 +108,10 @@ Plug 'w0rp/ale'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe'
+Plug 'ternjs/tern_for_vim'
+Plug 'ramitos/jsctags'
 call plug#end()
+
 
 " 全局搜索设置快捷键
 nnoremap <C-f> :CtrlSF<Space>
@@ -228,6 +231,12 @@ if !exists("g:ycm_semantic_triggers")
  let g:ycm_semantic_triggers = {}
 endif
 let g:ycm_semantic_triggers['typescript'] = ['.']
+" let mapleader="\<Space>"
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_error_symbol = '>>'
+let g:ycm_warning_symbol = '>*'
 
 "ctrlp
 let g:ctrlp_show_hidden=1 "显示隐藏文件
@@ -244,7 +253,6 @@ let g:indentLine_color_term = 239 "对齐线颜色
 " let g:indentLine_char = 'c' "对齐线符号, c表示任意ASCII码字符, 你还可以用下面这几个符号之一:  ¦, ┆, │, ⎸, 或 ▏
 
 " ale-setting {{{
-let g:ale_set_highlights = 0
 "自定义error和warning图标
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚡'
